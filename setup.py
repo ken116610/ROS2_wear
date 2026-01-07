@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'ROS2_wear_weather'
+package_name = 'ROS2_wear'
 
 setup(
     name=package_name,
@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='yuxuan',
+    maintainer='Yuken Ro',
     maintainer_email='yuken.lu3@gmail.com',
-    description='TODO: Package description',
+    description='a package for task',
     license='BSD-3-Clause',
     extras_require={
         'test': [
@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'temp_cli = ROS2_wear.temp_cli:main',
+            'outfit_suggester = ROS2_wear.outfit_suggester:main',
         ],
     },
 )
