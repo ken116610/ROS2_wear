@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Yuken Ro
+# SPDX-License-Identifier: BSD-3-Clause
+
 from setuptools import find_packages, setup
+
+import os
+from glob import glob
 
 package_name = 'ROS2_wear'
 
@@ -10,6 +17,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
