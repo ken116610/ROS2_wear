@@ -25,7 +25,6 @@ class TempCli(Node):
 def main() -> None:
     rclpy.init()
     node = TempCli()
-
     try:
         while rclpy.ok():
             s = input("Temp[°C]> ").strip()
@@ -33,14 +32,13 @@ def main() -> None:
                 continue
             node.publish_temp(float(s))
             rclpy.spin_once(node, timeout_sec=0.1)
-
-        except (KeyboardInterrupt, EOFError):
-            pass
-        except ValueError:
-            node.get_logger().error("Invalid number. Example: 18 or 23.5")
-        finally:
-            node.destroy_node()
-            rclpy.shutdown()
+    except (KeyboardInterrupt, EOFError):
+        pass
+    except ValueError:
+        node.get_logger().error("Invalid number. Example: 18 or 23.5")
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == "__main__":
-    main()
+     main()
