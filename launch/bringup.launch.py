@@ -10,12 +10,6 @@ def generate_launch_description():
             package="ROS2_wear",
             executable="outfit_suggester",
             output="screen",
-        )
+    )
 
-    temp_cli = launch_ros.actions.Node(
-            package="ROS2_wear",
-            executable="temp_cli",
-            output="screen",
-        )
-
-    return launch.LaunchDescription([outfit_suggester, temp_cli])
+    return launch.LaunchDescription([outfit_suggester])
