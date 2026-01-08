@@ -1,4 +1,0 @@
-[console_scripts]
-outfit_suggester = ROS2_wear.outfit_suggester:main
-temp_cli = ROS2_wear.temp_cli:main
-
