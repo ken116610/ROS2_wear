@@ -5,12 +5,15 @@
 source /opt/ros/humble/setup.bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=1
+set -eu
 
 cd "$(dirname "$0")"
 
 rm -rf build install log
 colcon build --packages-select ROS2_wear
+set +u
 source install/setup.bash
+set -u
 
 LOG=/tmp/ros2_wear.log
 rm -f "$LOG"
