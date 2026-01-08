@@ -6,7 +6,6 @@ source /opt/ros/humble/setup.bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=1
 
-set -eu
 cd "$(dirname "$0")"
 
 rm -rf build install log

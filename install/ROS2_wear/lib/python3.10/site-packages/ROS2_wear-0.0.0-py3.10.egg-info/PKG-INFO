@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ROS2-wear
+Version: 0.0.0
+Summary: a package for task
+Home-page: UNKNOWN
+Maintainer: Yuken Ro
+Maintainer-email: yuken.lu3@gmail.com
+License: BSD-3-Clause
+Platform: UNKNOWN
+Provides-Extra: test
+License-File: LICENSE
+
+UNKNOWN
+
