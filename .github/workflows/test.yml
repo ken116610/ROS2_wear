@@ -29,5 +29,5 @@ jobs:
       - name: Run test.bash
         run: |
           source /opt/ros/humble/setup.bash
-          chmod +x test/test.bash
-          bash -xv test/test.bash
+          chmod +x "${GITHUB_WORKSPACE}/test/test.bash"
+          bash -xv "${GITHUB_WORKSPACE}/test/test.bash"
