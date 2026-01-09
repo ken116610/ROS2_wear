@@ -23,10 +23,16 @@ LPID=$!
 
 sleep 2
 
-timeout 10 ros2 topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 4.0}"  > /dev/null
+for i in $(seq 1 30); do
+  ros2 --no-daemon topic info /temp_c 2>/dev/null | grep -q "Subscription count: [1-9]" && break
+  sleep 1
+done
+
+timeout 10 ros2 --no-daemon topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 4.0}"  --wait-matching-subscriptions 0 > /dev/null
 sleep 1
-timeout 10 ros2 topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 28.0}" > /dev/null
+timeout 10 ros2 --no-daemon topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 28.0}" --wait-matching-subscriptions 0 > /dev/null
 sleep 1
+
 
 if grep -q "/outfit_advice" "$LOG"; then
 	grep -Eq "4\.0.*(厚手|コート)" "$LOG" || { cat "$LOG"; echo "1"; exit 1; }
