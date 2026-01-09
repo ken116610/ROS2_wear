@@ -23,9 +23,9 @@ LPID=$!
 
 sleep 2
 
-ros2 topic pub /temp_c std_msgs/msg/Float32 "{data: 4.0}" -t 5 > /dev/null
+timeout 10 ros2 topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 4.0}"  > /dev/null
 sleep 1
-ros2 topic pub /temp_c std_msgs/msg/Float32 "{data: 28.0}" -t 5 > /dev/null
+timeout 10 ros2 topic pub -1 /temp_c std_msgs/msg/Float32 "{data: 28.0}" > /dev/null
 sleep 1
 
 if grep -q "/outfit_advice" "$LOG"; then
