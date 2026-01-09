@@ -24,17 +24,17 @@ $ source install/setup.bash
 ### 実行方法
 3つのターミナルを使用します。
 
-#### ターミナル1（受け側）
+#### 起動（受信側）
 ```
 $ ros2 run ROS2_wear outfit_suggester
 ```
 
-#### ターミナル2（気温入力）
+#### 気温を送る
 ```
 $ ros2 run ROS2_wear temp_cli
 ```
 
-#### ターミナル3（出力確認）
+#### 出力を確認する
 ```
 $ ros2 topic echo /outfit_advice
 ```
@@ -46,9 +46,8 @@ data: 4.0°C -> 厚手コート / 手袋 / マフラー
 ## 動作環境
 Ubuntu 22.04 LTS\
 Python3 系\
-GitHub Actions\
 ROS2 Humble
 
 ## ライセンス
-・本コマンドは三条項BSDライセンスの下にて、使用および複製が許可されています>。\
-・© 2025 Yuken Ro
+- 本コマンドは三条項BSDライセンスの下にて、使用および複製が許可されています>。
+- © 2025 Yuken Ro
