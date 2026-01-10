@@ -48,9 +48,6 @@ Ubuntu 22.04 LTS\
 Python3 系\
 ROS2 Humble
 
-## テスト
-GitHub Actions（push時にtesh.bashを実行）
-
 ## ライセンス
 - 本コマンドは三条項BSDライセンスの下にて、使用および複製が許可されています。
 - © 2025 Yuken Ro
