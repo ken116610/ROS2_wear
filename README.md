@@ -10,10 +10,10 @@
 
 ## トピック
 - `/temp_c` (`std_msgs/msg/Float32`)
- - Publisher: `temp_cli`
- - Subscriber: `outfit_suggester`
+   - Publisher: `temp_cli`
+   - Subscriber: `outfit_suggester`
 - `/outfit_advice` (`std_msgs/msg/String`)
- - Publisher: `outfit_suggester`
+   - Publisher: `outfit_suggester`
 
 ## 使い方
 
