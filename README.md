@@ -9,8 +9,11 @@
 - `temp_cli`：温度を手入力して `/temp_c` に配信します
 
 ## トピック
-- Subscribe：`/temp_c`(`std_msgs/msg/Float32`)
-- Publish：`/outfit_advice`(`std_msgs/msg/String`)
+- `/temp_c` (`std_msgs/msg/Float32`)
+ - Publisher: `temp_cli`
+ - Subscriber: `outfit_suggester`
+- `/outfit_advice` (`std_msgs/msg/String`)
+ - Publisher: `outfit_suggester`
 
 ## 使い方
 
@@ -22,8 +25,6 @@ $ source install/setup.bash
 ```
 
 ### 実行方法
-3つのターミナルを使用します。
-
 #### 起動（受信側）
 ```
 $ ros2 run ROS2_wear outfit_suggester
