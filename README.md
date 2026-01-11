@@ -24,23 +24,25 @@ $ colcon build --symlink-install
 $ source install/setup.bash
 ```
 
-### 実行方法
-#### 起動（受信側）
+### 実行･動作確認
+3つの端末で動作確認します。
+
+#### 1.起動（受信側）
 ```
 $ ros2 run ROS2_wear outfit_suggester
 ```
 
-#### 気温を送る
+#### 2.気温を送る
 ```
 $ ros2 run ROS2_wear temp_cli
 ```
 
-#### 出力を確認する
+#### 3.出力を確認する
 ```
 $ ros2 topic echo /outfit_advice
 ```
 
-### 実行例
+### 出力例
 例）気温を 4℃ と入力した場合（出力例）\
 data: 4.0°C -> 厚手コート / 手袋 / マフラー
 
